@@ -5,16 +5,32 @@ import Image from "next/image";
 import { useSearch } from "./context/SearchContext";
 import { Moon } from "lucide-react";
 import { Sun } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
 
+  // const api_key = process.env.UNSPLASH_API_key
+const [photos, setPhotos] = useState([])
 const {searchInputRef} = useSearch()
 const [lightMode, setLightMode] = useState(false)
+// const API_url = 'https://api.unsplash.com/search/photos'
 
 const toggleDarkMode = ()=>{
       setLightMode(!lightMode)
 }
+
+useEffect(()=>{
+  async function loadMaal(){
+    const res = await fetch(`/api/unsplash?query=cats&per_page=20`)
+    const data = await res.json()
+    setPhotos(data.results || [])
+  }
+  loadMaal()
+},[])
+
+
+// console.log(data);
+
 
 
   return (
@@ -44,6 +60,14 @@ const toggleDarkMode = ()=>{
             <button className="bg-cyan-950 active:bg-cyan-900 transition duration-150 text-white w-24 rounded-2xl">Search</button>
           </form>
 
+        <div className=" w-full grid grid-cols-2 gap-2  mt-5 p-5">
+          {photos.map((photo)=>(
+            <img src={photo.urls.small}
+                  key={photo.id}
+                   alt="img"
+                   className="rounded-xl" />
+          ))}
+        </div>
          
         </div>
     

@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+
+.Mason-div{
+    column-width: 150px;
+}
+
+
+.child-img{
+width: 100%;
+}

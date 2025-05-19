@@ -6,11 +6,14 @@ const api_key = process.env.UNSPLASH_API_key
 export async function GET(request){
     const {searchParams} = new URL(request.url)
     const query = searchParams.get('query') || 'cats'
-    const perPage = searchParams.get('per_page') || '20'
+    const perPage = searchParams.get('per_page') || '30'
+   
 
-    const url = new URL(`https://api.unsplash.com/search/photos`)
-    url.searchParams.set('query', query)
-    url.searchParams.set('per_page', perPage)
+        
+    let     url = new URL(`https://api.unsplash.com/search/photos`)
+        url.searchParams.set('query', query)
+        url.searchParams.set('per_page', perPage)
+    
 
     try{
         const response = await fetch(url.toString(),{
@@ -19,7 +22,7 @@ export async function GET(request){
             }
         })
 
-        console.log(response.status);
+        // console.log(response.status);
         
 
         if(!response.ok){
@@ -31,12 +34,16 @@ export async function GET(request){
 
 
         const data = await response.json()
-        console.log(data);
+        // console.log(data);
         
-        return NextResponse.json(data)
+        return NextResponse.json(data.results || [])
 
     }catch(error){
         console.log('unexpected error occured while fetching the data');
+        return NextResponse.json(
+            {error : 'internal server error'},
+            {status : 500}
+        )
         
     }
 }

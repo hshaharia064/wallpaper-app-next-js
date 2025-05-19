@@ -4,6 +4,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from './components/Navbar'
 import { SearchProvider } from './context/SearchContext'
+import { ThemeProvider } from './context/DarkModeContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,9 +17,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className}>
+       <ThemeProvider>
+
+       
         <SearchProvider>
       
-        <div className="flex flex-col min-w-screen overflow-hidden">
+        <div className={`flex flex-col min-w-screen overflow-hidden `}>
          
           <main className="flex-grow container ">
           <Navbar/>
@@ -27,6 +31,7 @@ export default function RootLayout({ children }) {
          
         </div>
         </SearchProvider>
+       </ThemeProvider>
       </body>
     </html>
   )

@@ -40,10 +40,12 @@ const data = await response.json()
               <ArrowLeft/> Back
               </Link>
              </div>
-           <div className="w-full h-[60vh] flex pt-10 justify-center">
+           <div className="w-full h-[60vh] p-4 flex pt-10 mb-20 justify-center">
+        <a href={data.urls.regular}>
 
             <img src={data.urls.regular} alt="Photo"
-            className="max-h-[60vh] max-w-screen shadow-black shadow-2xl rounded-xl" />
+            className="max-h-[60vh] max-w-[90vw] shadow-black object-cover shadow-2xl rounded-xl" />
+            </a>
             </div>
 
             <div className=" min-h-60 flex p-4  items-center justify-center mb-20 mt-5  w-full">

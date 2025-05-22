@@ -2,6 +2,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
+import photoDetails from "../photosDetails/[id]/page";
 
 export default async function favs() {
   const storedCookies = await cookies();
@@ -67,14 +68,18 @@ export default async function favs() {
             No liked photos found. Try liking some photos on Unsplash first!
           </p>
         ) : (
+          
           <div className="Mason-div gap-3 mt-5 my-5 px-5">
             {photos.map(photo => (
+            <Link href={`/photosDetails/${photo.id}`}
+            key={photo.id}>
               <img
-                key={photo.id}
-                src={photo.urls.small}
-                alt={photo.alt_description || 'Liked photo'}
-                className="rounded-xl shadow-2xl child-img mt-3 object-cover"
+              
+              src={photo.urls.small}
+              alt={photo.alt_description || 'Liked photo'}
+              className="rounded-xl shadow-2xl child-img mt-3 object-cover"
               />
+            </Link>
             ))}
           </div>
         )}

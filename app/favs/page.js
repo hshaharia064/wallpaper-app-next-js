@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { ChevronLeft } from "lucide-react";
 import photoDetails from "../photosDetails/[id]/page";
+import LikeTemplate from "../components/LikeTemplate";
 
 export default async function favs() {
   const storedCookies = await cookies();
@@ -71,8 +72,11 @@ export default async function favs() {
           
           <div className="Mason-div gap-3 mt-5 my-5 px-5">
             {photos.map(photo => (
+              <div className="relative flex  mt-3"
+               key={photo.id}>
+
             <Link href={`/photosDetails/${photo.id}`}
-            key={photo.id}>
+           className="">
               <img
               
               src={photo.urls.small}
@@ -80,6 +84,8 @@ export default async function favs() {
               className="rounded-xl shadow-2xl child-img mt-3 object-cover"
               />
             </Link>
+            <LikeTemplate/>
+              </div>
             ))}
           </div>
         )}

@@ -16,13 +16,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <body className={inter.className}>
+      <body className={inter.className }>
        <ThemeProvider>
 
        
         <SearchProvider>
       
-        <div className={`flex flex-col min-w-screen overflow-hidden `}>
+        <div className={`flex flex-col min-w-screen overflow-hidden bgGradient`}>
          
           <main className="flex-grow container ">
           <Navbar/>

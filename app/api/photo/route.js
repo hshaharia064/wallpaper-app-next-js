@@ -7,12 +7,14 @@ export async function GET(request){
     const {searchParams} = new URL(request.url)
     const query = searchParams.get('query') || 'cats'
     const perPage = searchParams.get('per_page') || '30'
+    const page = searchParams.get('page' || '1')
    
 
         
     let     url = new URL(`https://api.unsplash.com/search/photos`)
         url.searchParams.set('query', query)
         url.searchParams.set('per_page', perPage)
+        url.searchParams.set('page', page)
     
 
     try{

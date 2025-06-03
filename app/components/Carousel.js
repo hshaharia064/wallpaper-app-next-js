@@ -34,7 +34,7 @@ loadImages()
 
 
     return(
-        <div className="w-screen  h-72 mt-10  mx-auto">
+        <div className="w-screen  h-72 mt-10  mx-auto  pt-2">
             <Swiper modules={[Autoplay, Pagination, Navigation]}
             spaceBetween={10}
             slidesPerView={1}
@@ -50,7 +50,7 @@ loadImages()
 
 
                     <img src={p.urls.regular} alt="photo"
-                    className="object-cover shadow-black shadow-2xl w-full h-56 rounded-2xl " />
+                    className="object-cover shadow-black shadow-2xl border-red-800/75 border-2 w-full h-56 rounded-2xl " />
                     
                     </SwiperSlide>
                 ))}

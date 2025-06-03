@@ -54,6 +54,7 @@ const loadPhotos = useCallback(async(currentPage, searchQuery, isNewSearch = fal
  }
 
  const data = await response.json()
+ console.log(data)
 
  if(isNewSearch){
   setPhotos(data || [])
@@ -159,8 +160,12 @@ const toggleDarkMode = ()=>{
         {photos.map((photo) => (
           <div className="relative" key={photo.id}>
             <Link href={`/photosDetails/${photo.id}`}>
-              <img src={photo.urls.regular}
+              <Image src={photo.urls.regular}
                    alt="img"
+                   width={500}
+                   height={300}
+                  //  placeholder={data.urls.thumb}
+                  quality={70}
                    className="rounded-xl shadow-2xl child-img mt-3 shadow-white" />
             </Link>
             <LikeTemplate

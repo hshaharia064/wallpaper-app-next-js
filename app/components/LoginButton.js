@@ -13,7 +13,7 @@ export default function LoginButton() {
   // 2. Build the URLSearchParams
   const params = new URLSearchParams({
     client_id: process.env.NEXT_PUBLIC_UNSPLASH_API,   // your Access Key
-    redirect_uri: `${process.env.NEXT_PUBLIC_APP_URL}/api/unsplash/auth/callback`,
+    redirect_uri: `https://wallpixel-wallpaper-app.vercel.app/api/unsplash/auth/callback`,
     response_type: 'code',
     scope: scopeArray,
     prompt: 'login',                                   // optional: always show login/consent

@@ -20,7 +20,7 @@ export default async function favs() {
     const userResponse = await fetch(`https://api.unsplash.com/me`, {
       headers: {
         Authorization: `Bearer ${token}`,
-        'Accept-Version': 'v1', // Add this header for Unsplash API
+        // 'Accept-Version': 'v1', // Add this header for Unsplash API
       }
     });
 
@@ -37,7 +37,7 @@ export default async function favs() {
     const userLikes = await fetch(`https://api.unsplash.com/users/${user.username}/likes?per_page=30`, {
       headers: {
         Authorization: `Bearer ${token}`,
-        'Accept-Version': 'v1', // Add this header for Unsplash API
+        // 'Accept-Version': 'v1', // Add this header for Unsplash API
       }
     });
 

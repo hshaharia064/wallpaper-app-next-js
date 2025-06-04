@@ -18,7 +18,7 @@ export async function GET(request) {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      client_id: process.env.UNSPLASH_API_key,
+      client_id: process.env.NEXT_PUBLIC_UNSPLASH_API,
       client_secret: process.env.SECRET_KEY,
       redirect_uri: `${process.env.NEXT_PUBLIC_APP_URL}/api/unsplash/auth/callback`,
       code,

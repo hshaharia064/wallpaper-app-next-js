@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const api_key = process.env.UNSPLASH_API_key
+const api_key = process.env.NEXT_PUBLIC_UNSPLASH_API
 
 
 export async function GET(request){

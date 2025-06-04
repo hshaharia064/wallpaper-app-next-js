@@ -6,7 +6,7 @@ import DownloadSelector from "@/app/components/DownloadSelector";
 export default async function photoDetails({params}){
 
 
-    const api_key = process.env.UNSPLASH_API_key
+    const api_key = process.env.NEXT_PUBLIC_UNSPLASH_API
     const {id} = await params;
 try{
 

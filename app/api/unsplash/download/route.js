@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET(request){
-    const apiKey = process.env.UNSPLASH_API_key
+    const apiKey = process.env.NEXT_PUBLIC_UNSPLASH_API
 
     const {searchParams} = new URL (request.url)
     const photoId = searchParams.get('photoId')

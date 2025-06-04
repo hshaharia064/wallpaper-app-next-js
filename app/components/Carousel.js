@@ -31,7 +31,7 @@ loadImages()
 },[])
 
 
-
+console.log('hi')
 
     return(
         <div className="w-screen  h-72 mt-10  mx-auto  pt-2">

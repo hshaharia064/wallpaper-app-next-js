@@ -9,6 +9,9 @@ export async function GET(request) {
   }
 
   console.log("Received authorization code:", code);
+  // console.log(`redirect url : ${process.env.}`)
+  // console.log("Redirecting to favs →", `${process.env.NEXT_PUBLIC_APP_URL}/favs`);
+
 
   // Exchange code for access token
   const tokenRes = await fetch('https://unsplash.com/oauth/token', {
@@ -39,7 +42,8 @@ export async function GET(request) {
   console.log('Got access token:', access_token);
 
   // Redirect to /favs with cookie set
-  const response = NextResponse.redirect(new URL('/favs', process.env.NEXT_PUBLIC_APP_URL));
+ const response = NextResponse.redirect('https://wallpixel-wallpaper-app.vercel.app/favs');
+
   response.cookies.set('Unsplash_token', access_token, {
     httpOnly: true,
     path: '/',

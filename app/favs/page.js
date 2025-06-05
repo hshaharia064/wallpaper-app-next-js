@@ -14,7 +14,13 @@ export default async function favs() {
   }
 
   const token = tokenCookie.value; // Extract the actual token value
-  console.log('Token being used:', token);
+  // console.log('Token being used:', token);
+  
+  // console.log('this is API',process.env.NEXT_PUBLIC_UNSPLASH_API)
+  // console.log('This is the URL', process.env.NEXT_PUBLIC_APP_URL)
+  // console.log('This is the api key', process.env.UNSPLASH_API_key)
+  // console.log('This is the secret', process.env.SECRET_KEY)
+
 
   try {
     const userResponse = await fetch(`https://api.unsplash.com/me`, {

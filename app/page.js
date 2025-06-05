@@ -129,10 +129,6 @@ const handleSubmit = (e)=>{
 const toggleDarkMode = ()=>{
   setDarkMode(!darkMode)
 
-  console.log(process.env.NEXT_PUBLIC_UNSPLASH_API)
-  console.log(process.env.NEXT_PUBLIC_APP_URL)
-  console.log(process.env.UNSPLASH_API_key)
-  console.log(process.env.SECRET_KEY)
 }
  return (
     <div className={`w-screen min-h-screen bg-gray-100 ${darkMode ? 'dark' : ''}dark:bg-gray-900 flex text-white flex-col items-center pb-20`}>

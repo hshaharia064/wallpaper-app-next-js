@@ -20,7 +20,7 @@ export default async function favs() {
     const userResponse = await fetch(`https://api.unsplash.com/me`, {
       headers: {
         Authorization: `Bearer ${token}`,
-        // 'Accept-Version': 'v1', // Add this header for Unsplash API
+        'Accept-Version': 'v1', // Add this header for Unsplash API
       }
     });
 

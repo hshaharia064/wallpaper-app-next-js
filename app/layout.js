@@ -9,7 +9,10 @@ import { ThemeProvider } from './context/DarkModeContext'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Wallpaper Heaven',
+  icons : {
+    icon : '/logo.png'
+  },
+  title: 'Wallpixel',
   description: 'High quality wallpapers for your devices',
 }
 

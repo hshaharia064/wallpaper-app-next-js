@@ -23,7 +23,7 @@ export default function Navbar(){
             <div className="flex flex-col items-center">
 
             <Link href='/'>
-             <House className="size-8 text-white focus:bg-cyan-800"/>
+             <House className="size-8 text-white"/>
             <p className="text-white font-light text-sm ">Home</p>
             </Link>
             </div>

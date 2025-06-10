@@ -57,7 +57,7 @@ export default async function favs() {
     console.log('Number of liked photos:', photos.length);
 
     return (
-      <div className="w-screen min-h-screen flex flex-col bg-gray-200 pb-20 text-black">
+      <div className="w-screen min-h-screen flex flex-col bg-gray-100 dark:bg-gray-950 pb-20 text-black">
         <div className="w-full bg-cyan-950 h-16 flex items-center px-8">
           <Link href="/" className="flex items-center text-white px-2 py-1 rounded-3xl">
             <ChevronLeft className="size-7" />
@@ -66,12 +66,12 @@ export default async function favs() {
         </div>
 
         <div className="flex mt-5 px-5 py-5">
-          <h1 className="text-xl font-semibold">Your liked images ({photos.length}):</h1>
+          <h1 className="text-xl font-semibold dark:text-white">Your liked images ({photos.length}):</h1>
         </div>
         <span className="h-[0.5px] bg-gray-400 w-[90%] mx-auto mb-5"></span>
 
         {photos.length === 0 ? (
-          <p className="text-center text-gray-600 mt-10">
+          <p className="text-center text-gray-600 mt-10 dark:text-white">
             No liked photos found. Try liking some photos on Unsplash first!
           </p>
         ) : (

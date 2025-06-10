@@ -22,7 +22,9 @@ const [error, setError] = useState(null)
 
 const {searchInputRef} = useSearch()
 const [query, setQuery] = useState('photos')
-const [darkMode, setDarkMode] = useState(false)
+// const [darkMode, setDarkMode] = useState(false)
+
+
 
 
 const loadingRef = useRef(false)
@@ -126,19 +128,22 @@ const handleSubmit = (e)=>{
 }
 
 
-const toggleDarkMode = ()=>{
-  setDarkMode(!darkMode)
+// const toggleDarkMode = ()=>{
+//   setDarkMode(!darkMode)
 
-}
+// }
+
+
+const {darkMode, toggleDarkMode} = useTheme()
  return (
-    <div className={`w-screen min-h-screen bg-gray-100 ${darkMode ? 'dark' : ''}dark:bg-gray-900 flex text-white flex-col items-center pb-20`}>
-      <div className="container h-24 flex justify-between px-8 items-center dark:bg-red-500">
-        <p className="text-3xl text-black font-semibold">Wallpixel</p>
+    <div className={`w-screen min-h-screen  ${darkMode ? 'dark' : ''}dark:bg-gray-900 flex text-white flex-col items-center pb-20`}>
+      <div className="container h-24 flex justify-between px-8 items-center ">
+        <p className="text-3xl text-black dark:text-white font-semibold">Wallpixel</p>
         <div className={`bg-cyan-950 rounded-bl-full rounded-br-full transition duration-300 ease-in-out top-0 w-12 h-20 relative overflow-hidden flex justify-center items-center`}>
           <div className={`flex w-28 justify-between absolute mt-6 items-center ${darkMode ? 'translate-x-[2.5rem]' : '-translate-x-[2.5rem]'} transition-all duration-200`}
                onClick={toggleDarkMode}>
-            <Sun className="size-8" />
             <Moon className="size-8" />
+            <Sun className="size-8" />
           </div>
         </div>
       </div>
@@ -148,9 +153,9 @@ const toggleDarkMode = ()=>{
         <input id="input" type="text"
                ref={searchInputRef}
                placeholder="Search photos..."
-               className="border-2 text-black border-cyan-950 h-10 rounded-2xl w-60 outline-0 px-3"
+               className="border-2 text-black dark:text-white border-cyan-950 dark:border-cyan-600 h-10 rounded-2xl w-60 outline-0 px-3"
         />
-        <button className="bg-cyan-950 active:bg-cyan-900 transition duration-150 text-white w-24 rounded-2xl"
+        <button className="bg-cyan-950 active:bg-cyan-900 dark:bg-cyan-600/40 dark:border-2 dark:border-cyan-600 transition duration-150 text-white w-24 rounded-2xl" 
                 type="submit">Search</button>
       </form>
 
@@ -167,7 +172,7 @@ const toggleDarkMode = ()=>{
                    height={300}
                   //  placeholder={data.urls.thumb}
                   quality={70}
-                   className="rounded-xl shadow-2xl child-img mt-3 shadow-white" />
+                   className="rounded-xl shadow-2xs child-img mt-3 shadow-white" />
             </Link>
             <LikeTemplate
               photoId={photo.id}

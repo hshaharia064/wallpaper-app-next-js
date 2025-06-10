@@ -50,7 +50,7 @@ console.log('hi')
 
 
                     <img src={p.urls.regular} alt="photo"
-                    className="object-cover shadow-black shadow-2xl border-red-800/75 border-2 w-full h-56 rounded-2xl " />
+                    className="object-cover shadow-black shadow-2xl border-cyan-800/75 border-2 w-full h-56 rounded-2xl " />
                     
                     </SwiperSlide>
                 ))}

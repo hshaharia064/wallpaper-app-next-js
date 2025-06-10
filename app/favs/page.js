@@ -58,7 +58,7 @@ export default async function favs() {
 
     return (
       <div className="w-screen min-h-screen flex flex-col bg-gray-100 dark:bg-gray-950 pb-20 text-black">
-        <div className="w-full bg-cyan-950 h-16 flex items-center px-8">
+        <div className="w-full bg-cyan-950 h-16 flex lg:hidden items-center px-8">
           <Link href="/" className="flex items-center text-white px-2 py-1 rounded-3xl">
             <ChevronLeft className="size-7" />
             <span className="ml-2 text-xl">Back</span>

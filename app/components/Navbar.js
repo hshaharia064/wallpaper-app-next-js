@@ -17,7 +17,7 @@ export default function Navbar(){
 
 
     return(
-        <div className="flex justify-center">
+        <div className="flex justify-center lg:hidden lg:absolute">
             <div className="bg-cyan-950 w-[90%] flex items-center justify-between px-7 gap-6 rounded-full bottom-4  h-16  fixed z-50">
 
             <div className="flex flex-col items-center">

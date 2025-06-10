@@ -8,7 +8,7 @@ export default function login(){
 
     return(
         <div className="min-h-screen min-w-screen pb-32  flex flex-col  bg-gray-100 dark:bg-gray-950 overflow-hidden">
-            <div className="min-w-screen h-16 flex items-center px-5 text-white bg-cyan-950">
+            <div className="min-w-screen h-16 flex items-center px-5 text-white bg-cyan-950 lg:hidden">
                 <Link href='/' 
                       className="active:bg-cyan-900 flex items-center text-xl px-2 py-1 rounded-full">
                        <ChevronLeft className="size-7"/> Back</Link>

@@ -10,6 +10,7 @@ import { useTheme } from "./context/DarkModeContext";
 import Carousel from "./components/Carousel";
 import Link from "next/link";
 import LikeTemplate from "./components/LikeTemplate";
+import { House,Star } from "lucide-react";
 
 export default function Home() {
 
@@ -137,8 +138,32 @@ const handleSubmit = (e)=>{
 const {darkMode, toggleDarkMode} = useTheme()
  return (
     <div className={`w-screen min-h-screen  ${darkMode ? 'dark' : ''}dark:bg-gray-900 flex text-white flex-col items-center pb-20`}>
-      <div className="container h-24 flex justify-between px-8 items-center ">
+      <div className="container h-24 flex justify-between px-8  items-center ">
         <p className="text-3xl text-black dark:text-white font-semibold">Wallpixel</p>
+        <div className="hidden lg:block lg:flex gap-4 ">
+           <div className="flex items-center justify-center flex-col ">
+
+           <Link href='/'>
+            
+            <p className="dark:text-white text-black  text-md font-semibold hover:text-cyan-700 transition-all duration-300 text-md underline-offset-8 underline">Home</p>
+            </Link>
+           </div>
+            
+
+            <div  className="flex flex-col items-center">
+
+            <Link href='/favs'>
+           
+              <p className="dark:text-white text-black  text-md font-semibold hover:text-cyan-700 transition-all duration-300 text-md underline-offset-8 underline">Favs</p>
+            </Link>
+
+            </div>
+               <Link href='/login'
+             className="flex flex-col items-center">
+                
+                 <p className="dark:text-white text-black  text-md font-semibold hover:text-cyan-700 transition-all duration-300 text-md underline-offset-8 underline ">Profile</p>    
+            </Link>
+        </div>
         <div className={`bg-cyan-950 rounded-bl-full rounded-br-full transition duration-300 ease-in-out top-0 w-12 h-20 relative overflow-hidden flex justify-center items-center`}>
           <div className={`flex w-28 justify-between absolute mt-6 items-center ${darkMode ? 'translate-x-[2.5rem]' : '-translate-x-[2.5rem]'} transition-all duration-200`}
                onClick={toggleDarkMode}>
@@ -162,7 +187,7 @@ const {darkMode, toggleDarkMode} = useTheme()
       <span className="h-[.06rem] shadow-2xl bg-gray-900 w-[90%] mt-7"></span>
       <Carousel />
 
-      <div className="Mason-div gap-3 mt-5 my-5 px-5">
+      <div className="Mason-div gap-3 mt-5 my-5 px-5  lg:w-full p-10">
         {photos.map((photo) => (
           <div className="relative" key={photo.id}>
             <Link href={`/photosDetails/${photo.id}`}>

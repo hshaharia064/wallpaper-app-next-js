@@ -11,6 +11,13 @@
 width: 100%;
 }
 
+@media screen and (min-width:1024px) {
+    .Mason-div{
+        column-width: 250px;
+    }
+    
+}
+
 
 .bgGradient{
     background-image: linear-gradient(to right top, #000000, #120007, #1a0011, #1f001b, #1f0026, #1e062c, #1c0b32, #191038, #1f1837, #242035, #292832, #2f2f2f);

@@ -34,8 +34,8 @@ const data = await response.json()
 // console.log(data);
 
     return(
-        <div className="w-screen bg-gray-100 flex flex-col min-h-screen ">
-             <div className="bg-cyan-950 w-full flex items-center px-5 text-xl font-medium text-white h-16 top-0">
+        <div className="w-screen bg-gray-100 dark:bg-gray-950 flex flex-col min-h-screen ">
+             <div className="bg-cyan-950 w-full flex items-center px-5 text-xl lg:hidden font-medium text-white h-16 top-0">
               <Link href="/" className="flex items-center gap-1 active:bg-cyan-900 rounded-2xl px-2 py-1">
               <ArrowLeft/> Back
               </Link>
@@ -49,7 +49,7 @@ const data = await response.json()
             </div>
 
             <div className=" min-h-60 flex p-4  items-center justify-center mb-20 mt-5  w-full">
-                 <div className="bg-white p-5 shadow-gray-400 text-gray-700 flex flex-col gap-2 rounded-2xl shadow-2xl min-h-52  w-full">
+                 <div className="bg-white dark:bg-cyan-900 dark:text-white p-5  text-gray-700 flex flex-col gap-2 rounded-2xl shadow-2xl min-h-52  w-full">
                     <p className="font-medium text-shadow-2xs flex items-center text-xl">
                         <Camera/>  : {data.user.first_name} </p>
                     <p className="font-medium text-shadow-2xs flex items-center text-xl">
